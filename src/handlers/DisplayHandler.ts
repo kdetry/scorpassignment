@@ -1,16 +1,23 @@
 import { apiEventHandler } from '../index';
 import { APIAnimatedGiftEvent } from '../scorplib/api';
 import { Queue } from '../transferobjects/Queue';
-import { addMessage, animateGift, isPossiblyAnimatingGift } from '../scorplib/dom_updates';
+import {
+    addMessage,
+    animateGift,
+    isPossiblyAnimatingGift,
+    isAnimatingGiftUI,
+} from '../scorplib/dom_updates';
 
 export const DisplayHandler = function () {
     setInterval(() => {
         const animatedGiftEventQueue: Queue<APIAnimatedGiftEvent> =
             apiEventHandler.getAnimatedGiftEventQueue();
-        const condition: boolean =
-            animatedGiftEventQueue.size() > 0 && isPossiblyAnimatingGift() === false;
 
-        if (condition) {
+        if (
+            animatedGiftEventQueue.size() > 0 &&
+            isPossiblyAnimatingGift() === false &&
+            isAnimatingGiftUI() === false
+        ) {
             animateGift(animatedGiftEventQueue.dequeue());
             return;
         }
