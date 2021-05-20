@@ -34,10 +34,7 @@ export class Queue<T> {
             }
         }
         
-        if(slicePoint > 0){
-            console.log(slicePoint);
-            
+        if(slicePoint > 0)            
             this.storage.slice(slicePoint)
-        }
     }
 }
