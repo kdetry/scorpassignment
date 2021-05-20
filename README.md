@@ -1,6 +1,6 @@
 # ASSIGNMENT
 
-It is an test project for job interview.
+It is a test project for job interview.
 
 ## Building and running on localhost
 
