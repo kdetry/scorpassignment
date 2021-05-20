@@ -38,10 +38,14 @@ cd dist && npx http-server
 
 ## Project Description
 
-src folder of project contains application's main codes. 
+src folder of project contains application's main codes.
+
 When build project, webpack copies `index.html`, `main.css` and `assets` folders to /dist.  
+
 `scorplib` folder contains libraries provided by company.
+
 `transferobjects` folder contains `types` of added by developer. There is just `Queue` type in this folder.
+
 `handlers` folder contains `APIEventHandler` class and `DisplayHandler`. 
 -   `APIEventHandler` class is handling data provided by `api.js``
 -   The task of the `DisplayHandling` function is to handle the data to be displayed on the screen.
